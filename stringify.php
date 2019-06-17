@@ -30,7 +30,11 @@ return (function() {
 			return "dict";
 		}
 
-		return "object";
+		if (\is_object($value)) {
+			return "object";
+		}
+
+		return "unknown";
 	};
 
 	$fn_indent = function($value) {
